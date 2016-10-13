@@ -1,0 +1,41 @@
+.row.mt20
+  .col-sm-12
+    .panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+      / Start .panel
+      .panel-heading
+        %h4.panel-title
+          = link_to @page.url_link_name, admin_pages_path
+          > sub categories
+        .panel-controls.panel-controls-hide{:style => "display: none;"}
+          %a.panel-refresh{:href => "#"}
+            %i.im-spinner6
+          %a.toggle.panel-minimize{:href => "#"}
+            %i.im-minus
+          %a.panel-close{:href => "#"}
+            %i.im-close
+      .panel-body
+        = link_to "add subcategory", new_admin_page_subcategory_path, class: "btn btn-xs btn-primary"
+.row
+  .col-sm-12
+    #spr_1.panel.panel-default.plain.toggle.panelClose.panelRefresh
+      .panel-heading.white-bg
+      .panel-body{:style => "display: block;"}
+        .table-responsive{:style => "overflow: hidden; width: 100%; height: auto;"}
+          %table.table.table-striped
+            %thead
+              %tr
+                %th.per20 Sub category
+                %th.per20 Options
+                %th.per20
+                %th.per20
+            %tbody
+              - @subcategories.each do |sub|
+                %tr
+                  %td
+                    = sub.url_link_name
+                  %td
+                    = link_to "edit", edit_admin_page_subcategory_path(@page, sub), class: "btn btn-xs btn-info"
+                  %td
+                    = link_to "delete", admin_page_subcategory_path(@page, sub), class: "btn btn-xs btn-danger", method: :delete
+                  %td
+                  %td

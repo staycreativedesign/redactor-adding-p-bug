@@ -1,0 +1,88 @@
+.row.mt20
+  .col-sm-12
+    #spr_0.panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+      / Start .panel
+      .panel-heading
+        %h4.panel-title Current business information
+        .panel-controls.panel-controls-hide{:style => "display: none;"}
+          %a.panel-refresh{:href => "#"}
+            %i.im-spinner6
+          %a.toggle.panel-minimize{:href => "#"}
+            %i.im-minus
+          %a.panel-close{:href => "#"}
+            %i.im-close
+      .panel-body
+        = link_to "add page", new_admin_page_path, class: "btn btn-xs btn-primary"
+.row.mt20
+  .col-sm-12
+    = form_for [:admin, @business] do |f|
+      .panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Location
+        .panel-body.form-horizontal
+          .form-group
+            = f.label :logo, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.file_field :logo, class: "form-control"
+          .form-group
+            = f.label :name, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :name, class: "form-control"
+          .form-group
+            = f.label :address, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :address, class: "form-control"
+          .form-group
+            = f.label :city, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :city, class: "form-control"
+          .form-group
+            = f.label :state, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :state, class: "form-control"
+          .form-group
+            = f.label :zipcode, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :zipcode, class: "form-control"
+          .form-group
+            = f.label :second_number, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :second_number, class: "form-control"
+          .form-group
+            = f.label :first_number, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :first_number, class: "form-control"
+          .form-group
+            = f.label :fax, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :fax, class: "form-control"
+          .form-group
+            = f.label :email, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :email, class: "form-control"
+      .panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Social Media
+        .panel-body.form-horizontal
+          .form-group
+            = f.label :social_instagram, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :social_instagram, class: "form-control"
+          .form-group
+            = f.label :social_facebook, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :social_facebook, class: "form-control"
+      .panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Google Maps
+        .panel-body.form-horizontal
+          .form-group
+            = f.label :google_maps_latitude, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :google_maps_latitude, class: "form-control"
+          .form-group
+            = f.label :google_maps_longitude, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :google_maps_longitude, class: "form-control"
+
+      = f.submit "Update business"

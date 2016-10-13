@@ -1,0 +1,58 @@
+= form_for [:admin, @page] do |f|
+  .row.mt20
+    .col-sm-12
+      .panel
+        .panel-heading
+          %h4.panel-title Left side area
+        .panel-body
+          .form-group
+            = f.label :image, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.file_field :image, id: "", class: "form-control"
+  .row
+    .col-sm-12
+      .panel
+        .panel-heading
+          %h4.panel-title Right side area
+        .panel-body
+          = f.text_area :main_description, id: "hello"
+  .row.mt20
+    .col-sm-12
+      .panel
+        .panel-heading
+          %h4.panel-title Search Engine Optimization
+        .panel-body.form-horizontal
+          .form-group
+            = f.label :meta_title, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_title, class: "form-control"
+          .form-group
+            = f.label :url_link_name, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :url_link_name, class: "form-control"
+          .form-group
+            = f.label :meta_description, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_description, class: "form-control"
+          .form-group
+            = f.label :meta_keywords, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_keywords, class: "form-control"
+  .row
+    .form-group
+      .col-sm-12
+        = f.submit "save page", class: "btn btn-success form-control"
+:javascript
+  $(function()
+    {
+      $('#left-side').redactor({
+        buttons: ['html','formatting','bold','italic','unorderedlist','orderedlist','link','image','video', 'table'],
+        paragraphize: false,
+        replaceDivs: false
+        });
+      $('#hello').redactor({
+        plugins: ['source'],
+        buttonsHide: ['deleted']
+        });
+          });
+

@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= content_for?(:meta_title) ? yield(:meta_title) : "My Application"
+    %meta{:content => content_for(:meta_description) ? yield(:meta_description) : "There is no description",:name => "description"}
+    %meta{:content => content_for(:meta_keywords) ? yield(:meta_keywords) : "There are no keywords", :name => "keywords"}
+    %meta{:content => content_for(:author) ? yield(:meta_author) : "There is no author", :name => "author"}
+    = csrf_meta_tags
+    = stylesheet_link_tag    'admin/admin', media: 'all'
+    = javascript_include_tag 'admin/admin'
+%body.login-page
+  - flash.each do |key, value|
+    %div{:class => "alert alert-#{key}"}= value
+  = yield

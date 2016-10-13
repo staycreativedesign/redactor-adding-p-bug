@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= content_for?(:meta_title) ? yield(:meta_title) : "My Application"
+    %meta{:content => content_for(:meta_description) ? yield(:meta_description) : "There is no description",:name => "description"}
+    %meta{:content => content_for(:meta_keywords) ? yield(:meta_keywords) : "There are no keywords", :name => "keywords"}
+    %meta{:content => content_for(:author) ? yield(:meta_author) : "There is no author", :name => "author"}
+    = csrf_meta_tags
+    = stylesheet_link_tag    'admin/admin', media: 'all'
+    = javascript_include_tag 'admin/admin'
+%body
+  - flash.each do |key, value|
+    %div{:class => "alert alert-#{key}"}= value
+  #header
+    .container-fluid
+      .navbar
+        .navbar-header
+          %a.navbar-brand{:href => "/admin/panel"}
+            %i.im-windows8.text-logo-element.animated.bounceIn
+            %span.text-logo
+  #sidebar
+    .sidebar-inner
+      .sidebar-panel.panel-nav-header.dark-bg
+        %h4.sidebar-panel-title Navigation
+        %ul#sideNav.nav.nav-pills.nav-stacked
+          %li
+            = link_to 'Business Menu', edit_admin_business_path(Business.first)
+          %li
+            = link_to 'Pages Menu', admin_pages_path
+        %h4.sidebar-panel-title Front page
+        %ul#sideNav.nav.nav-pills.nav-stacked
+  #content
+    / Start .content-wrapper
+    .content-wrapper
+      = yield

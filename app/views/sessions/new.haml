@@ -1,0 +1,21 @@
+/ Start #login
+#login.animated.bounceIn
+  -# %img#logo{:alt => "sprFlat Logo", :src => "assets/img/logo.png"}/
+  / Start .login-wrapper
+  .login-wrapper
+    %ul#myTab.nav.nav-tabs.nav-justified.bn
+      %li
+        %a{"data-toggle" => "tab", :href => "#log-in"} Login
+    #myTabContent.tab-content.bn
+      = form_tag("/login", id: "login-form", class: "form-horizontal.mt20") do
+        .form-group
+          .col-lg-12
+            %label Email
+            = text_field_tag 'email', nil, class: "form-control left-icon", placeholder: "Your email"
+        .form-group
+          .col-lg-12.mt20
+            %label Password
+            = password_field_tag 'password', nil, class: "form-control left-icon", placeholder: "Your password"
+        .form-group
+          .col-lg-12.col-md-12.col-sm-6.col-xs-6.mt20.mb20
+            = button_tag "Login", class: "btn btn-success"

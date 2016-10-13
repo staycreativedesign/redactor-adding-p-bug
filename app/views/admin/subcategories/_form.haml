@@ -1,0 +1,55 @@
+= form_for [:admin, @page, @subcategory] do |f|
+  .row.mt20
+    .col-sm-12
+      #spr_0.panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Left side area
+        .panel-body
+          = f.file_field :image, id: "left-side"
+  .row
+    .col-sm-12
+      #spr_0.panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Right side area
+        .panel-body
+          = f.text_area :main_description, id: "right-side"
+  .row.mt20
+    .col-sm-12
+      #spr_0.panel.panel-default.panelMove.toggle.panelRefresh.panelClose
+        .panel-heading
+          %h4.panel-title Search Engine Optimization
+        .panel-body.form-horizontal
+          .form-group
+            = f.label :meta_title, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_title, class: "form-control"
+          .form-group
+            = f.label :url_link_name, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :url_link_name, class: "form-control"
+          .form-group
+            = f.label :meta_description, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_description, class: "form-control"
+          .form-group
+            = f.label :meta_keywords, class: "col-lg-2 col-md-2 col-sm-12 control-label"
+            .col-lg-10.col-md-10
+              = f.text_field :meta_keywords, class: "form-control"
+    .row
+      .form-group
+        .col-sm-12
+          = f.submit "save subcategory", class: "btn btn-success form-control"
+:javascript
+  $(function()
+    {
+      $('#left-side').redactor({
+        imageUpload: '/admin/#{@page}/image',
+        buttonsHide: ['deleted', 'italic', 'format', 'bold', 'lists', 'link']
+        });
+      $('#right-side').redactor({
+        plugins: ['source'],
+        imageUpload: '/admin/pages/image',
+        buttonsHide: ['deleted']
+        });
+          });
+
