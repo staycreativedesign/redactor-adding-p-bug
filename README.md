@@ -1,7 +1,6 @@
 # README
 
-This shows the error I am experiencing with Redactor it adds ```<p> and <br>
-tags``` on save
+1st. Erro with replacing <i> with <em> on save
 
 * Things to do before
 
@@ -13,9 +12,9 @@ goto login/
 
 Than Pages click on add new page
 
-Please insert a paragraphs in Right side area and insert
+Please insert text below in Right side area and insert
 
-test or foo in url link name under Search Engine Optimization
+<p><a class="btn green no-border" href="/book-a-consultation"><br>Book a consultation<br><i class="ion-arrow-right-c"></i></a><a class="btn btn--white btn--transparent" href="/bundled-services"><br><span class="btn__text">View Our Services<br></span></a></p>
 
 Click on edit
 
@@ -23,5 +22,5 @@ click on save page
 
 Click on edit
 
-and it should be adding a ```<p> with a <br> in it```
+and it should be adding a ```<em> where the  <i> where```
 
