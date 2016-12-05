@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require admin/redactor/redactor.min
+//= require admin/redactor/source
 
