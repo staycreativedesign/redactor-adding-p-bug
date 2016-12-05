@@ -1,6 +1,6 @@
 # README
 
-1st. Erro with replacing <i> with <em> on save
+1st. Error with replacing ```<i> with <em>``` on save
 
 * Things to do before
 
@@ -14,7 +14,7 @@ Than Pages click on add new page
 
 Please insert text below in Right side area and insert
 
-<p><a class="btn green no-border" href="/book-a-consultation"><br>Book a consultation<br><i class="ion-arrow-right-c"></i></a><a class="btn btn--white btn--transparent" href="/bundled-services"><br><span class="btn__text">View Our Services<br></span></a></p>
+```<p><a class="btn green no-border" href="/book-a-consultation"><br>Book a consultation<br><i class="ion-arrow-right-c"></i></a><a class="btn btn--white btn--transparent" href="/bundled-services"><br><span class="btn__text">View Our Services<br></span></a></p>```
 
 Click on edit
 
